@@ -1,20 +1,23 @@
 [% USE Markdown -%]
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Blog</title>
-  </head>
+[% INCLUDE head.tt %]
   <body>
-    <h1>My nice blog</h1>
+[% INCLUDE archives.tt %]
+    <div id="main">
+      <h1>My nice blog</h1>
+      <div id="posts">
 [% FOREACH page IN pages %]
-    <div class="post">
-      <h2>[% page.TITLE %]</h2>
-      <p>
-        [% FILTER markdown -%]
+        <div class="post">
+          <h2>[% page.TITLE %]</h2>
+          <p>
+          [% FILTER markdown -%]
 [% page.EXCERPT %]
-        [% END %]
-      </p>
-    </div>
+          [% END %]
+          </p>
+        </div><!-- end div post -->
 [% END %]
+       </div><!-- end div posts -->
+     </div><!-- end div main -->
   </body>
 </html>

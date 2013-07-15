@@ -1,0 +1,22 @@
+#main {
+  width       : 600px;
+  float       : left;
+}
+
+#archives {
+  float         : left;
+  padding-right : 2em;
+}
+
+#archives h1 {
+  font-size  : 1.2em;
+}
+
+h1 {
+  margin-top : 20px;
+}
+
+.post {
+  padding-top : 1.5em;
+}
+

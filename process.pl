@@ -29,6 +29,12 @@ my $vars = {
   'pages' => \@pages,
 };
 
+print("[INFO]: Generating the index page...\n");
+
 $tt -> process('index.tt', $vars, $TARGET_DIRECTORY . "/index.html") or
   print($tt -> error());
+
+# Copy static content using rsync
+print("[INFO]: Copying static content...\n");
+system("rsync -r --delete static/* $TARGET_DIRECTORY");
 
