@@ -4,6 +4,7 @@ use File::Path('make_path');
 use Template;
 use MyBlog::Config;
 use MyBlog::PageReader;
+use MyBlog::Archives;
 use strict;
 use warnings;
 
@@ -24,9 +25,14 @@ my $tt = Template->new({
 });
 
 
+# determine the archives
+my @archives = MyBlog::Archives::compute_archives(@pages);
+
+
 # create the index page
 my $vars = {
   'pages' => \@pages,
+  'archives' => \@archives,
 };
 
 print("[INFO]: Generating the index page...\n");

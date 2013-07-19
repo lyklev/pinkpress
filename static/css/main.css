@@ -20,3 +20,8 @@ h1 {
   padding-top : 1.5em;
 }
 
+.post {
+  font-family  : "Palatino Linotype", serif;
+  text-align   : justify;
+}
+

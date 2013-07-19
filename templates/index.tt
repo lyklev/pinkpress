@@ -10,6 +10,9 @@
 [% FOREACH page IN pages %]
         <div class="post">
           <h2>[% page.TITLE %]</h2>
+          <div class="timestamp">
+            [% page.timestamp %]
+          </div>
           <p>
           [% FILTER markdown -%]
 [% page.EXCERPT %]
